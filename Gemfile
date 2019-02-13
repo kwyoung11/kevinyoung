@@ -50,8 +50,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-# gem 'push_type', github: "kwyoung11/push_type"
-gem 'push_type', path: "/Users/kevinyoung/dev2/github_push_type"
+gem 'push_type', github: "kwyoung11/push_type"
+# gem 'push_type', path: "/Users/kevinyoung/dev2/github_push_type"
 gem 'webpacker', '~> 3.5'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
