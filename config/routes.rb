@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+  get "/blog" => "front_end#show", permalink: PushType.config.home_slug if PushType.config.home_slug.present?
   # Mount all the registered PushType Rails Engines. This should be placed
   # at the end of your routes.rb file to ensure your application routes are
   # not overidden by PushType.
