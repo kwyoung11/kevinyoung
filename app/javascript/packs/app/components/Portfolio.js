@@ -34,13 +34,13 @@ class Portfolio extends React.Component {
 			return this.state.entries.map((entry, i) => {
 
 				return (
-					<Link to={PATH + entry.title} className="PortfolioList__entry">
+					<Link to={PATH + entry.title} className="PortfolioList__item">
 						<section className="post">
         	        	    <header className="post-header">
         	        	        <h2 className="post-title">{entry.title}</h2>
-								<span className="post-category post-category-js" href="#">{entry.technologies.join(" | ")}</span>
+								<span className="tags" dangerouslySetInnerHTML={{__html: entry.technologies.join(' <span class="dot">.</span> ')}}></span>
         	        	    </header>
-        	        	    <img height="250" width="250" src={entry.screenshot_url}/>
+        	        	    <img src={entry.screenshot_url}/>
         	        	    <div className="post-description" dangerouslySetInnerHTML={{__html: entry.summary}}></div>
         	        	</section>
         	        </Link>
@@ -50,9 +50,9 @@ class Portfolio extends React.Component {
 		
 		return (
 			<Layout>
-        	    <div className="posts PortfolioList">
+        	    <div className="posts Portfolio">
         	        <h1 className="content-subhead">Portfolio</h1>
-        	        <div className="PortfolioListContainer">
+        	        <div className="PortfolioList">
         	        	<EntriesList />
         	        </div>
         	    </div>

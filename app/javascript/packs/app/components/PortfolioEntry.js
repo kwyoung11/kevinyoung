@@ -32,13 +32,10 @@ class PortfolioEntry extends React.Component {
 		const Entry = function() {
 			return (
 				<section className="post">
-        	        <header className="post-header">
-        	            <img className="main-image" src={this.state.entry.screenshot_url}/>
-        	        </header>
-	
+        	        <img className="main-image" src={this.state.entry.screenshot_url}/>
+					<p dangerouslySetInnerHTML={{__html: this.state.entry.summary}}></p>
         	        <div className="post-description">
-        	            <p dangerouslySetInnerHTML={{__html: this.state.entry.description}}>
-        	            </p>
+        	            <p dangerouslySetInnerHTML={{__html: this.state.entry.description}}></p>
         	        </div>
         	    </section>
 			);
@@ -46,12 +43,12 @@ class PortfolioEntry extends React.Component {
 		
 		return (
 			<Layout>
-        	    <div className="posts PortfolioEntry">
+        	    <div className="posts PortfolioItem">
         	    	<div className="pure-g content-subhead">
         	    		<div className="pure-u-1">
         	    			<div className="pure-u-1-2">
         	    				<h1>{this.state.entry.title}</h1>
-        	    				<span className="tags" href="#">{this.state.entry.technologies.join(" | ")}</span>
+        	    				<span className="tags" dangerouslySetInnerHTML={{__html: this.state.entry.technologies.join(' <span class="dot">.</span> ')}}></span>
         	    			</div>
         	    			<div className="pure-u-1-2">
         	    				<div className="project-link">

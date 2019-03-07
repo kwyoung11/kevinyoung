@@ -134,6 +134,11 @@ h3 {
 
 .post {
     padding-bottom: 2em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-top: 50px;
+    color: #111;
+
 }
 .post-title {
     font-size: 2em;
@@ -146,8 +151,6 @@ h3 {
     margin-left: 1em;
 }
 .post-description {
-    font-family: Georgia, "Cambria", serif;
-    color: #444;
     line-height: 1.8em;
 }
 .post-meta {
@@ -218,16 +221,16 @@ h3 {
     }
 }
 
-.PortfolioList {
-    .PortfolioListContainer {
+.Portfolio {
+    .PortfolioList {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         text-decoration: none;
     }
-    .PortfolioList__entry {
-        flex: 0 0 500px;
+    .PortfolioList__item {
+        flex: 0 1 500px;
         margin: 15px 0px 15px 0px;
         cursor: pointer;
         border: 1px solid #aaa;
@@ -250,15 +253,23 @@ h3 {
         }
     
         img {
-            display: inherit;
-            margin: 0 auto;
+            max-width: 100%;
         }
     }
 
     
 }
 
-.PortfolioEntry {
+.tags {
+    color: #999;
+    line-height: 25px;
+    .dot {
+        font-size: 22px;
+        vertical-align: super;
+    }
+}
+
+.PortfolioItem {
     .project-link {
         display: inline-block;
         float: right;
@@ -272,7 +283,6 @@ h3 {
     }
 
     .main-image {
-        margin: 20px;
         max-width: 100%;
     }
     h1 {
@@ -284,9 +294,21 @@ h3 {
         display: inline-block;
         vertical-align: super;
     }
-
+    video {
+        max-width: 100%;
+    }
     img {
         margin: 0 auto;
+    }
+}
+
+.fr-img-wrap, .fr-video {
+    img {
+        width: 100%;
+    }
+    .fr-inner {
+        color: #999;
+        font-style: italic;
     }
 }
 
