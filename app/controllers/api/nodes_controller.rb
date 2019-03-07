@@ -1,11 +1,11 @@
 class Api::NodesController < ApplicationController
 	def index
-		nodes = PushType::Node.where(type: params[:node][:type]).all
+		nodes = PushType::Node.where(type: params[:node][:type]).where(status: PushType::Node.statuses[:published]).all
 		render json: nodes.map {|n| resolve_ids(extract_field_store(n))}
 	end
 
 	def show
-		node = PushType::Node.where(slug: params[:id]).first
+		node = PushType::Node.where(slug: params[:id]).where(status: PushType::Node.statuses[:published]).first
 		render json: extract_field_store(node)
 	end
 
