@@ -33,11 +33,7 @@ class PortfolioEntry extends React.Component {
 			return (
 				<section className="post">
         	        <header className="post-header">
-        	            <h2 className="post-title">{this.state.entry.title}</h2>
-						<img src={this.state.entry.screenshot_url}/>
-        	            <p className="post-meta">
-        	                Tagged: <span className="post-category post-category-js" href="#">{Array.from(this.state.entry.technologies).join(" | ")}</span>
-        	            </p>
+        	            <img className="main-image" src={this.state.entry.screenshot_url}/>
         	        </header>
 	
         	        <div className="post-description">
@@ -55,10 +51,11 @@ class PortfolioEntry extends React.Component {
         	    		<div className="pure-u-1">
         	    			<div className="pure-u-1-2">
         	    				<h1>{this.state.entry.title}</h1>
+        	    				<span className="tags" href="#">{this.state.entry.technologies.join(" | ")}</span>
         	    			</div>
         	    			<div className="pure-u-1-2">
         	    				<div className="project-link">
-        	    					<a href={this.state.entry.link}> Go to Project </a><i class="material-icons">open_in_new</i>
+        	    					<a href={this.state.entry.link}> Go to Project </a><i className="material-icons">open_in_new</i>
         	    				</div>
         	    			</div>
         	    		</div>

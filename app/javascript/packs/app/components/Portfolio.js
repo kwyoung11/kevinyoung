@@ -5,7 +5,7 @@ import image from '../assets/images/ericf-avatar.png';
 import { BrowserRouter, Link } from 'react-router-dom';
 
 const API = window.location.origin + '/api/nodes?node[type]=PortfolioEntry';
-const PATH = window.location.origin + '/portfolio2/';
+const PATH = '/portfolio/';
 
 class Portfolio extends React.Component {
 	constructor(props) {

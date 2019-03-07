@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from './Layout';
+import { BrowserRouter, Link } from 'react-router-dom';
 import image from '../assets/images/ericf-avatar.png';
 
 const API = window.location.origin + '/api/nodes?node[type]=Post';
-const PATH = window.location.origin + '/posts/';
+const PATH = '/posts/';
 
 class Blog extends React.Component {
 	constructor(props) {
@@ -30,7 +31,7 @@ class Blog extends React.Component {
 				return (
 					<section className="post">
         	            <header className="post-header">
-        	                <h2 className="post-title"><a href={PATH + post.id}>{post.title}</a></h2>
+        	                <h2 className="post-title"><Link to={PATH + post.id}>{post.title}</Link></h2>
 	
         	                <p className="post-meta">
         	                    <a className="post-category post-category-js" href="#">JavaScript</a>
