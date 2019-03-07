@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  root to: "application#home"
+
   namespace :api do
     resources :nodes, only: [:index, :show], defaults: {format: :json}
   end
