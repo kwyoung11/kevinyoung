@@ -32,7 +32,7 @@ class Layout extends React.Component {
     		        </nav>
     		    </div>
     		</div>
-    		<div class="content pure-u-1 pure-u-md-3-4">
+    		<div className="content pure-u-1 pure-u-md-3-4">
         		<div>
         			{this.props.children}
             	</div>

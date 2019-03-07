@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import Layout from './Layout';
 import image from '../assets/images/ericf-avatar.png';
 
-const API = window.location.origin + '/api/nodes?node[type]=PostSite';
+const API = window.location.origin + '/api/nodes?node[type]=Post';
+const PATH = window.location.origin + '/posts/';
 
 class Blog extends React.Component {
 	constructor(props) {
@@ -11,7 +12,6 @@ class Blog extends React.Component {
 		this.state = {
 			posts: []
 		}
-		console.log("const", this.state.posts);
 	}
 
 	componentDidMount() {
@@ -19,7 +19,7 @@ class Blog extends React.Component {
 		.then(response => response.json())
 		.then(data => {
 			this.setState({
-				posts: data.nodes
+				posts: data
 			});
 		});
 	}
@@ -27,13 +27,10 @@ class Blog extends React.Component {
 	render() {
 		const PostsList = function() {
 			return this.state.posts.map((post, i) => {
-
-				var parser = new DOMParser();
-				var doc = parser.parseFromString(post.field_store.body, "text/html");
 				return (
 					<section className="post">
         	            <header className="post-header">
-        	                <h2 className="post-title"><a href={post.permalink}>{post.title}</a></h2>
+        	                <h2 className="post-title"><a href={PATH + post.id}>{post.title}</a></h2>
 	
         	                <p className="post-meta">
         	                    <a className="post-category post-category-js" href="#">JavaScript</a>
@@ -41,7 +38,7 @@ class Blog extends React.Component {
         	            </header>
 	
         	            <div className="post-description">
-        	                <p dangerouslySetInnerHTML={{__html: post.field_store.body}}>
+        	                <p dangerouslySetInnerHTML={{__html: post.body}}>
         	                </p>
         	            </div>
         	        </section>

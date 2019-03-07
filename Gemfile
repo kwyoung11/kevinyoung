@@ -39,6 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -53,6 +54,8 @@ end
 gem 'push_type', github: "kwyoung11/push_type"
 # gem 'push_type', path: "/Users/kevinyoung/dev2/github_push_type"
 gem 'webpacker', '~> 3.5'
+
+gem 'dragonfly-s3_data_store'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

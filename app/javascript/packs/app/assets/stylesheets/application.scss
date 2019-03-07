@@ -75,7 +75,7 @@ h3 {
 
 .brand-title,
 .brand-tagline {
-    margin: 0;
+    margin: 0;	
     a {
     	text-decoration: none;
     	color: #fff;
@@ -215,6 +215,60 @@ h3 {
 
     .footer {
         text-align: center;
+    }
+}
+
+.PortfolioList {
+    .PortfolioListContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-decoration: none;
+    }
+    .PortfolioList__entry {
+        flex: 0 0 500px;
+        margin: 15px 0px 15px 0px;
+        cursor: pointer;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        padding: 15px;
+        text-align: center;
+
+        &:hover {
+            box-shadow: 1px 1px 1px 1px #ddd, -1px -1px 1px 1px #ddd;
+            text-decoration: none;
+        }
+
+        .post-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .post-description {
+            margin-top: 20px;
+        }
+    
+        img {
+            display: inherit;
+            margin: 0 auto;
+        }
+    }
+
+    
+}
+
+.PortfolioEntry {
+    .project-link {
+        display: inline-block;
+        float: right;
+        margin-top: 20px;
+        a {
+            vertical-align: -webkit-baseline-middle;
+        }
+        i {
+            vertical-align: top;
+        }
     }
 }
 

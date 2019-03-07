@@ -30,11 +30,16 @@ PushType.setup do |config|
 
   # PushType uses Dragonfly for managing uploaded images/assets.
   # Dragonfly datastore configuration
-  config.dragonfly_datastore = :file
+  config.dragonfly_datastore = :s3
   config.dragonfly_datastore_options = {
-    root_path:    Rails.root.join('public/system/dragonfly', Rails.env),
-    server_root:  Rails.root.join('public')
+    bucket_name:        ENV['KEVIN_YOUNG_S3_BUCKET'],
+    access_key_id:      ENV['S3_ACCESS_KEY_ID'],
+    secret_access_key:  ENV['S3_SECRET_ACCESS_KEY']
   }
+  # config.dragonfly_datastore_options = {
+  #   root_path:    Rails.root.join('public/system/dragonfly', Rails.env),
+  #   server_root:  Rails.root.join('public')
+  # }
 
   # For S3 storage, remember to add to Gemfile:
   # gem 'dragonfly-s3_data_store'
