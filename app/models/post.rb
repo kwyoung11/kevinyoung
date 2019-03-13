@@ -7,5 +7,6 @@ class Post < PushType::Node
 
   # Model the content by adding custom fields to the node.
   field :body, :wysiwyg
+  field :tags, :tag_list
 
 end

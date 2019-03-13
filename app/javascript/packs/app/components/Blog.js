@@ -31,15 +31,12 @@ class Blog extends React.Component {
 				return (
 					<section className="post">
         	            <header className="post-header">
-        	                <h2 className="post-title"><Link to={PATH + post.slug}>{post.title}</Link></h2>
-	
-        	                <p className="post-meta">
-        	                    <a className="post-category post-category-js" href="#">JavaScript</a>
-        	                </p>
+        	                <h2 style={{display: "inline-block", marginRight: "20px"}} className="post-title"><Link to={PATH + post.slug}>{post.title}</Link></h2>
+        	                <span style={{marginTop: "40px", float: "right"}} className="post-category post-category-js" href="#">Tagged: {post.tags.join(" / ")}</span>
         	            </header>
 	
         	            <div className="post-description">
-        	                <p dangerouslySetInnerHTML={{__html: post.body}}>
+        	                <p dangerouslySetInnerHTML={{__html: post.body.replace(/(<([^>]+)>)/ig,"").substring(0, 300) + "..."}}>
         	                </p>
         	            </div>
         	        </section>
