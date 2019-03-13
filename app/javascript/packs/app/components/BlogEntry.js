@@ -25,6 +25,9 @@ class BlogEntry extends React.Component {
 	}
 
 	render() {
+		if (this.state.post == undefined) {
+			return null;
+		}
 		const Post = () => {
 			return (
 				<section className="post">

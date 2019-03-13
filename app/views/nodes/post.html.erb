@@ -1,9 +1,7 @@
 <h1><%= @node.title %></h1>
-<p>This is a generated Post template.</p>
-<p>Find me at: app/views/nodes/post.html.erb</p>
 
 <div>
   <div>Body:</div>
-  <div><%= @node.body %></div>
+  <div><%= @node.body.html_safe %></div>
 </div>
   
