@@ -1,6 +1,9 @@
 class Api::NodesController < ApplicationController
 	def index
-		nodes = PushType::Node.where(type: params[:node][:type]).where(status: PushType::Node.statuses[:published]).all
+		nodes = PushType::Node.where(type: params[:node][:type])
+			.where(status: PushType::Node.statuses[:published])
+			.order("sort_order asc")
+			.all
 		render json: nodes.map {|n| resolve_ids(extract_field_store(n))}
 	end
 
