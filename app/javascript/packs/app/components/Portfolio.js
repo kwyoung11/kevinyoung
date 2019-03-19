@@ -34,7 +34,7 @@ class Portfolio extends React.Component {
 			return this.state.entries.map((entry, i) => {
 
 				return (
-					<Link to={PATH + entry.title} className="PortfolioList__item">
+					<Link to={PATH + entry.slug} className="PortfolioList__item">
 						<section className="post">
         	        	    <header className="post-header">
         	        	        <h2 className="post-title">{entry.title}</h2>
