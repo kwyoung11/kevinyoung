@@ -6,10 +6,12 @@
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
     "bulma": "^0.7.4",
+    "moment": "^2.24.0",
     "prop-types": "^15.7.1",
     "rails-erb-loader": "^5.5.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
+    "react-icons": "^3.9.0",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {

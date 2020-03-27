@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     resources :nodes, only: [:index, :show], defaults: {format: :json}
   end
 
-  PushType.rails_engines.each do |k, (mod, path)|
-    mount mod::Engine => path
+  PushType.rails_engines.each do |k, (mod, default_path)|
+    mount mod::Engine => default_path
   end
 
   get 'media/*file_uid' => Dragonfly.app.endpoint { |params, app|

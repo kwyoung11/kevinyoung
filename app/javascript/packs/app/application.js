@@ -15,7 +15,7 @@ import './assets/stylesheets/application';
 document.addEventListener("turbolinks:load", function() {
 
 	ReactDOM.render(
-    	<Routes />, 
+    	<Routes />,
     	document.getElementById('Home')
   	);
 
