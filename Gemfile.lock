@@ -239,7 +239,8 @@ GEM
       actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (4.3.12)
+      nio4r (~> 2.0)
     rack (2.0.6)
     rack-proxy (0.6.5)
       rack
@@ -348,7 +349,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
-  puma (~> 3.7)
+  puma (~> 4.3)
   push_type!
   rails (~> 5.1.6, >= 5.1.6.1)
   sass-rails (~> 5.0)
